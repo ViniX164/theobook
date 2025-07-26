@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Estilo Theobook</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      max-width: 1000px;
+      width: 90%;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .left {
+      flex: 1;
+      padding-right: 40px;
+    }
+
+    .left h1 {
+      color: #1877f2;
+      font-size: 56px;
+      margin-bottom: 10px;
+    }
+
+    .left p {
+      font-size: 24px;
+    }
+
+    .right {
+      flex: 1;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .right input {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .right button {
+      width: 100%;
+      padding: 14px;
+      background-color: #1877f2;
+      border: none;
+      color: white;
+      font-size: 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .right button:hover {
+      background-color: #155dbe;
+    }
+
+    .create-account {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .create-account button {
+      background-color: #42b72a;
+    }
+
+    .create-account button:hover {
+      background-color: #36a420;
+    }
+
+    .separator {
+      text-align: center;
+      margin: 10px 0;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <h1>theobook</h1>
+      <p>O Theobook ajuda você a se conectar e compartilhar com as pessoas que fazem parte da sua vida.</p>
+    </div>
+    <div class="right">
+      <form>
+        <input type="text" placeholder="Email ou telefone" required>
+        <input type="password" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+      </form>
+      <div class="separator">ou</div>
+      <div class="create-account">
+        <button onclick="window.location.href='cadastro.html'">Criar nova conta</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
