@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Home - Theobook</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Theobook</h1>
+    <input type="text" id="searchUser" placeholder="Buscar usuários..." autocomplete="off" />
+    <button onclick="logout()">Sair</button>
+  </header>
+
+  <div id="searchResults" class="search-results"></div>
+
+  <main class="main-container">
+    <section class="profile">
+      <img id="userPhoto" src="" alt="Foto de perfil" />
+      <h2 id="userName"></h2>
+      <button id="btnChangePhoto" onclick="abrirModalFoto()">Mudar foto de perfil</button>
+      <input
+        type="file"
+        id="inputChangePhoto"
+        accept="image/*"
+        style="display:none"
+        onchange="alterarFotoPerfil(event)"
+      />
+      <p>Seguidores: <span id="followersCount">0</span></p>
+      <p>Seguindo: <span id="followingCount">0</span></p>
+    </section>
+
+    <section class="stories">
+      <h3>Stories</h3>
+      <div class="story-list" id="storyList"></div>
+      <div class="story-form">
+        <textarea id="storyText" placeholder="Texto do story..."></textarea>
+        <input type="file" id="storyMedia" accept="image/*,video/*" />
+        <button onclick="criarStory()">Postar Story</button>
+      </div>
+    </section>
+
+    <section class="post-area">
+      <h3>Nova Postagem</h3>
+      <textarea id="postText" placeholder="No que está pensando?"></textarea>
+      <input type="file" id="postMedia" accept="image/*,video/*" />
+      <button onclick="criarPostagem()">Publicar</button>
+    </section>
+
+    <section class="feed">
+      <h3>Feed</h3>
+      <div id="feedList"></div>
+    </section>
+  </main>
+
+  <div id="modalStory" class="modal-story" style="display:none">
+    <div class="modal-content">
+      <button class="close-btn" onclick="fecharModalStory()">×</button>
+      <div id="storyFullscreenContent"></div>
+      <button class="nav-btn prev" onclick="anteriorStory()">‹</button>
+      <button class="nav-btn next" onclick="proximoStory()">›</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+/* Reset e estilo base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f2f5;
+  color: #1c1e21;
+}
+
+/* Header */
+header {
+  background: #1877f2;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 24px;
+  cursor: default;
+}
+header input {
+  width: 250px;
+  padding: 7px 12px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Botão sair */
+header button {
+  background-color: #385898;
+  border: none;
+  padding: 8px 15px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+header button:hover {
+  background-color: #2d4373;
+}
+
+/* Container principal */
+.main-container {
+  max-width: 700px;
+  margin: 30px auto;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 8px #ccc;
+}
+
+/* Perfil */
+.profile {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #1877f2;
+}
+.profile h2 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.profile button {
+  margin: 10px auto 0 auto;
+  display: block;
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.profile button:hover {
+  background-color: #145dbf;
+}
+
+/* Sessões */
+.stories, .post-area, .feed {
+  margin-bottom: 30px;
+}
+
+/* Título das sessões */
+h3 {
+  margin-bottom: 10px;
+  border-bottom: 2px solid #1877f2;
+  padding-bottom: 5px;
+  font-weight: 700;
+}
+
+/* Lista de stories */
+.story-list {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+.story-list::-webkit-scrollbar {
+  height: 6px;
+}
+.story-list::-webkit-scrollbar-thumb {
+  background-color: #1877f2;
+  border-radius: 3px;
+}
+.story-list::-webkit-scrollbar-track {
+  background: #e4e6eb;
+  border-radius: 3px;
+}
+
+/* Story individual */
+.story-item {
+  min-width: 110px;
+  background: #e7f3ff;
+  border: 2px solid #1877f2;
+  border-radius: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+.story-item img, .story-item video {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.story-item p {
+  margin: 8px 0 0 0;
+  font-size: 13px;
+  text-align: center;
+  color: #050505dd;
+}
+
+/* Formulário de story */
+.story-form textarea,
+.post-area textarea {
+  width: 100%;
+  padding: 12px;
+  resize: vertical;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  margin-bottom: 10px;
+  font-family: inherit;
+}
+.story-form input[type="file"],
+.post-area input[type="file"] {
+  margin-bottom: 10px;
+}
+.story-form button,
+.post-area button {
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 700;
+  width: 100%;
+  font-size: 16px;
+}
+.story-form button:hover,
+.post-area button:hover {
+  background-color: #145dbf;
+}
+
+/* Feed */
+.feed div.post-item {
+  background: #fafafa;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+}
+.feed div.post-item strong {
+  font-size: 16px;
+}
+.feed div.post-item p {
+  margin: 8px 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 14px;
+}
+.feed div.post-item img {
+  margin-top: 10px;
+  max-width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Modal stories fullscreen */
+.modal-story {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(28, 30, 33, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.modal-content {
+  position: relative;
+  background: #222;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 700px;
+  max-height: 90vh;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+.modal-content img,
+.modal-content video {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 12px;
+  object-fit: contain;
+}
+.modal-content p {
+  margin-top: 20px;
+  font-size: 22px;
+  text-align: center;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(24, 119, 242, 0.7);
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 50%;
+  user-select: none;
+}
+.nav-btn.prev {
+  left: 10px;
+}
+.nav-btn.next {
+  right: 10px;
+}
+
+/* Busca resultados */
+.search-results {
+  position: absolute;
+  background: white;
+  max-width: 700px;
+  width: 90%;
+  max-height: 250px;
+  overflow-y: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.2);
+  z-index: 10000;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+.search-results .user-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+  cursor: default;
+}
+.search-results .user-item:last-child {
+  border-bottom: none;
+}
+.search-results .user-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+.search-results .user-item .user-name {
+  flex-grow: 1;
+  font-weight: 600;
+  color: #050505cc;
+}
+.search-results .user-item button {
+  background: #1877f2;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.search-results .user-item button:hover {
+  background: #145dbf;
+}
+
+/* Login e cadastro */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f2f5;
+}
+.login-container {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 300px;
+}
+.login-container h1 {
+  margin: 0 0 20px 0;
+  font-weight: 700;
+  color: #1877f2;
+  text-align: center;
+}
+.login-container input[type="text"],
+.login-container input[type="email"],
+.login-container input[type="password"],
+.login-container input[type="file"] {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
+}
+.login-container button {
+  background: #1877f2;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+}
+.login-container button:hover {
+  background: #145dbf;
+}
+.login-container p {
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+}
+.login-container a {
+  color: #1877f2;
+  font-weight: 600;
+  text-decoration: none;
+}
+.login-container a:hover {
+  text-decoration: underline;
+}
